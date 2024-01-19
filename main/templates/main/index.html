@@ -5,43 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <style>
+        h1{font-family: Montserrat;}
+    </style>
     <title>Document</title>
     {% load static %}
 </head>
-<body>
-    <div class="container vh-100">
-        <div class="row h-100">
-            <div class="col-6 p-3 border border-#808080 border-2 mx-auto my-auto rounded-4">
-                <div class="d-flex justify-content-around">
-                    <img src="{% static 'main/images/roblox-logo.png' %}" alt="" style="width:30px;">
-                    <h3 class="d-inline">buku tamu pojok baca</h3>
-                    <img src="{% static 'main/images/roblox-logo.png' %}" alt="" style="width:30px;">
+<body style="background: url({% static 'main/images/books-1163695.jpg' %});">
+    <div>
+        <div class="container-sm vh-100 ">
+            <div class="row h-100 ">
+                <div class="col-lg-10 col-12 p-3 border border-#808080 border-2 mx-auto my-auto rounded-4 shadow bg-white">
+                    <div class="row ">
+                        <div class="col my-auto mx-3 d-none d-md-inline">
+                            <div>
+                            <H1>selamat datang</H1>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium voluptatem quidem a ea? Error recusandae cum praesentium, veritatis temporibus et architecto est voluptatibus sequi, hic unde, eaque ratione officiis molestias.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="d-flex justify-content-around">
+                                <img src="{% static 'main/images/roblox-logo.png' %}" alt="" style="width:30px;">
+                                <h3 class="d-inline">buku tamu pojok baca</h3>
+                                <img src="{% static 'main/images/roblox-logo.png' %}" alt="" style="width:30px;">
+                            </div>
+                            <hr>
+                            <p>silahkan isi data berikut ini</p>
+                            <form action="{% url 'create-guest' %}" method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">Fullname :</label>
+                                <input id="fullname" type="text" class="form-control" name="fullname" required>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email :</label>
+                                    <input id="email" type="text" class="form-control" name="email" required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone :</label>
+                                    <input id="phone" type="text" class="form-control" name="phone" required>
+                                </div>
+        
+                            
+                                <div class="mb-3">
+                                    <input type="submit" class="btn btn-primary col-12" value="submit" required>
+                                </div>
+                            
+                            </form>
+                        </div>
+
+                
+                    
                 </div>
-                <hr>
-                <p>silahkan isi data berikut ini</p>
-                <form action="{% url 'create-guest' %}" method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="fullname" class="form-label">Fullname :</label>
-                    <input id="fullname" type="text" class="form-control" name="fullname" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email :</label>
-                        <input id="email" type="text" class="form-control" name="email" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone :</label>
-                        <input id="phone" type="text" class="form-control" name="phone" required>
-                    </div>
-
-                    
-                    <div class="mb-3">
-                        <input type="submit" class="btn btn-primary col-12" value="submit" required>
-                    </div>
-                    
-                </form>
             </div>
         </div>
     </div>
