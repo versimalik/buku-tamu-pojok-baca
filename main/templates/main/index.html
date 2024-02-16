@@ -22,38 +22,42 @@
                     <div class="row ">
                         <div class="col my-auto mx-3 d-none d-md-inline">
                             <div>
-                            <H1>selamat datang</H1>
+                            <H1>Selamat Datang</H1>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium voluptatem quidem a ea? Error recusandae cum praesentium, veritatis temporibus et architecto est voluptatibus sequi, hic unde, eaque ratione officiis molestias.</p>
                             </div>
                         </div>
                         <div class="col">
                             <div class="d-flex justify-content-around">
                                 <img src="{% static 'main/images/roblox-logo.png' %}" alt="" style="width:30px;">
-                                <h3 class="d-inline">buku tamu pojok baca</h3>
+                                <h3 class="d-inline">Buku Tamu Pojok Baca</h3>
                                 <img src="{% static 'main/images/roblox-logo.png' %}" alt="" style="width:30px;">
                             </div>
                             <hr>
-                            <p>silahkan isi data berikut ini</p>
+                            <p>Silahkan Isi Data Berikut Ini</p>
                             <form action="{% url 'create-guest' %}" method="post">
                                 {% csrf_token %}
-                                <div class="mb-3">
-                                    <label for="fullname" class="form-label">Fullname :</label>
+                                <div class="mb-1">
+                                    <label for="fullname" class="form-label">Nama Lengkap :</label>
                                 <input id="fullname" type="text" class="form-control" name="fullname" required>
                                 </div>
                             
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label for="email" class="form-label">Email :</label>
                                     <input id="email" type="text" class="form-control" name="email" required>
                                 </div>
         
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">Phone :</label>
+                                <div class="mb-1">
+                                    <label for="phone" class="form-label">Nomor Telpon :</label>
                                     <input id="phone" type="text" class="form-control" name="phone" required>
                                 </div>
-        
+
+                                <div class="mb-3">
+                                    <label for="origin" class="form-label">Asal Sekolah/Lembaga :</label>
+                                    <input id="origin" type="text" class="form-control" name="origin" required>
+                                </div>
                             
                                 <div class="mb-3">
-                                    <input type="submit" class="btn btn-primary col-12" value="submit" required>
+                                    <input type="submit" class="btn btn-primary col-12" value="Kirim" required>
                                 </div>
                             
                             </form>

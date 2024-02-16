@@ -12,11 +12,13 @@ def create(request):
     fullname = request.POST['fullname']
     email = request.POST['email']
     phone = request.POST['phone']
+    origin = request.POST['origin']
     current_datetime = datetime.datetime.now()
     guest = Guest (
         fullname = fullname,
         phone = phone,
         email = email,
+        origin = origin,
         DateTime = current_datetime
     )
     guest.save()
